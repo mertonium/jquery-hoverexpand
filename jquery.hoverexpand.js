@@ -9,7 +9,7 @@
       var $obj = $(this);
       var origHeight = $obj.css('height');
       
-      if(origHeight > options.minHeight) {
+      if( parseInt(origHeight) > parseInt(options.minHeight)) {
         $obj.css({
           height: options.minHeight,
           overflow: 'hidden'
