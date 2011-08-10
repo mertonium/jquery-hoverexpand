@@ -9,19 +9,21 @@
       var $obj = $(this);
       var origHeight = $obj.css('height');
       
-      $obj.css({
-        height: options.minHeight,
-        overflow: 'hidden'
-      });
+      if(origHeight > options.minHeight) {
+        $obj.css({
+          height: options.minHeight,
+          overflow: 'hidden'
+        });
       
-      $obj.hover(
-        function() {
-          $obj.animate({height: origHeight }, 500);       //expand
-        },
-        function() {
-          $obj.animate({height: options.minHeight}, 500); //contract
-        }
-      );
+        $obj.hover(
+          function() {
+            $obj.animate({height: origHeight }, 500);       //expand
+          },
+          function() {
+            $obj.animate({height: options.minHeight}, 500); //contract
+          }
+        );
+      }
     });
   };
 })(jQuery);
