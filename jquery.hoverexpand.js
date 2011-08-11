@@ -1,7 +1,8 @@
 (function($) {
   $.fn.hoverexpand = function(options) {
     var defaults = {
-      minHeight: '100px'
+      minHeight: '100px',
+      collapsedClass: 'expand-me'
     };
     var options = $.extend(defaults, options);
 
@@ -13,14 +14,14 @@
         $obj.css({
           height: options.minHeight,
           overflow: 'hidden'
-        });
+        }).addClass(options.collapsedClass);
       
         $obj.hover(
           function() {
-            $obj.animate({height: origHeight }, 500);       //expand
+            $obj.animate({height: origHeight }, 500).removeClass(options.collapsedClass);       //expand
           },
           function() {
-            $obj.animate({height: options.minHeight}, 500); //contract
+            $obj.animate({height: options.minHeight}, 500).addClass(options.collapsedClass);    //contract
           }
         );
       }
