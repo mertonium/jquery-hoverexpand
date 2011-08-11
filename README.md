@@ -10,12 +10,16 @@ _a jQuery plugin that lets you see through the clutter_
     $('div').hoverexpand();
 This code will give all divs on the page a height of 100px.  When you hover over a div, it will expand to its full height.
 
-You can pass an object with a minHeight key to override the 100px default.
-
-    $('div').hoverexpand({ minHeight: '50px' });
 Make sure you include the plugin on your web page:
 
     <script type="text/javascript" src="path/to/jquery.hoverexpand.js"></script>
+    
+**The options:** You can pass an object to override the default options of hoverexpand().
+
+    $('div').hoverexpand({
+      minHeight: '100px',           // If an element has a height greater than minHeight, it will become 'expandable'
+      collapsedClass: 'expand-me'   // Class to be added to 'expandable' elements. The class is removed at the end of the expand event
+    });
 
 **The License:**
 
