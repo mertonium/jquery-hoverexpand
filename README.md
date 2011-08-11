@@ -18,7 +18,8 @@ Make sure you include the plugin on your web page:
 
     $('div').hoverexpand({
       minHeight: '100px',           // If an element has a height greater than minHeight, it will become 'expandable'
-      collapsedClass: 'expand-me'   // Class to be added to 'expandable' elements. The class is removed at the end of the expand event
+      collapsedClass: 'expand-me',  // Class to be added to 'expandable' elements. The class is removed at the end of the expand event
+      hoverTime: 500                // Time (in ms) that a user must hover over an element before it expands
     });
 
 **The License:**
